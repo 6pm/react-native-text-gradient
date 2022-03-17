@@ -84,6 +84,8 @@ public abstract class RNShadowTextGradient extends ReactTextShadowNode {
     if (context != null) {
       UIManagerModule uiManager = context.getNativeModule(UIManagerModule.class);
 
+      FLog.w(ReactConstants.TAG, "11111111 = " + uiManager.getUIImplementation());
+
       NativeViewHierarchyManager manager = ReflectUtils.getFieldValue(
         ReflectUtils.getFieldValue(
           uiManager.getUIImplementation(),
