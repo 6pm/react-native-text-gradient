@@ -12,9 +12,11 @@ class ReflectUtils {
 
     @SuppressWarnings("unchecked")
     static <T> T getFieldValue(Object target, String name, @Nullable Class type) {
-        type = type == null ? target.getClass() : type;
+
 
         try {
+            type = type == null ? target.getClass() : type;
+            
             Field field = type.getDeclaredField(name);
             field.setAccessible(true);
 
@@ -30,9 +32,11 @@ class ReflectUtils {
 
     @SuppressWarnings({"unchecked", "SameParameterValue"})
     static <T> T invokeMethod(Object target, String name, @Nullable Class type) {
-        type = type == null ? target.getClass() : type;
+
 
         try {
+            type = type == null ? target.getClass() : type;
+            
             Method method = type.getDeclaredMethod(name);
             method.setAccessible(true);
 
